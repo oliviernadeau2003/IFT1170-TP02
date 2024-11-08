@@ -9,7 +9,7 @@ import java.util.List;
 public class TP02_1170_NumB_A24 {
     public static void AfficherNumB() {
         List<Pays> paysList = new ArrayList<>();
-        int nombrePays = lireFichierPays("pays_a24.txt", paysList);
+        int nombrePays = lireFichierPays("data/pays_a24.txt", paysList);
         System.out.println("Nombre de pays lus : " + nombrePays);
     }
 
