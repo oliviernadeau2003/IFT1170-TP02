@@ -12,7 +12,6 @@ public class TP02_1170_NumB_A24 {
         String currentDirectory = System.getProperty("user.dir");
         int nombrePays = lireFichierPays(currentDirectory + "/src/data/pays_a24.txt", paysList);
         System.out.println("Nombre de pays lus : " + nombrePays);
-
     }
 
     public static int lireFichierPays(String fichier, List<Pays> paysList) {
