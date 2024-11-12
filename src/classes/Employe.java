@@ -21,6 +21,14 @@ public class Employe {
     }
 
     // Getters et setters
+    public String getNAS() {
+        return this.NAS;
+    }
+
+    public void setNAS(String NAS) {
+        this.NAS = NAS;
+    }
+
     public double getSalHebdo() {
         return this.salHebdo;
     }

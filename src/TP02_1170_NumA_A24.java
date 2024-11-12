@@ -10,13 +10,16 @@ public class TP02_1170_NumA_A24 {
         Employe emp4 = new Employe("450 279 321", 1750.75);
 
         // Affichage des informations
+        System.out.println("Information de l'employé 3 :");
         emp3.afficher();
+        System.out.println("Information de l'employé 4 :");
         emp4.afficher();
         System.out.println();
 
         // Modification du salaire de emp2 : somme de salaires de emp1 et emp3
         emp2.setSalHebdo(emp1.getSalHebdo() + emp3.getSalHebdo());
 
+        System.out.println("Information de l'employé 2 :");
         emp2.afficher();
         System.out.println();
 
@@ -32,10 +35,23 @@ public class TP02_1170_NumA_A24 {
         employes[5] = new Employe("371 238 432", 50.00, 20.25); // salHebdo = 50 * 20.25$
 
         // Affichage du contenu du tableau en utilisant toString()
-        for (int i = 0; i < employes.length; i++) {
+        for (int i = 0; i < employes.length; i++)
             System.out.println("Employe " + i + ": " + employes[i].toString());
-        }
+
         System.out.println();
 
+        countAndDisplayBy(employes,1300.00d,"5");
+        countAndDisplayBy(employes,750.00d,"3");
+        System.out.println();
+    }
+
+    public static int countAndDisplayBy(Employe[] employes, double salHebdoMax, String nas) {
+        int compteur = 0;
+        for (Employe employe : employes)
+            if (employe.getSalHebdo() < salHebdoMax && employe.getNAS().contains(nas)) {
+                System.out.println(employe.toString());
+                compteur++;
+            }
+        return compteur;
     }
 }
