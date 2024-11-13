@@ -40,18 +40,12 @@ public class TP02_1170_NumA_A24 {
 
         System.out.println();
 
-        countAndDisplayBy(employes,1300.00d,"5");
-        countAndDisplayBy(employes,750.00d,"3");
+        System.out.printf("%d employé(s) gagne(nt) moins de 1300.00$ et dont NAS contient '5'\n", Employe.countBy(employes, 1300.00d, "5"));
         System.out.println();
+
+        System.out.printf("%d employé(s) gagne(nt) moins de 750.00$ et dont NAS contient '3'", Employe.countBy(employes, 750.00d, "3"));
+        System.out.println();
+
     }
 
-    public static int countAndDisplayBy(Employe[] employes, double salHebdoMax, String nas) {
-        int compteur = 0;
-        for (Employe employe : employes)
-            if (employe.getSalHebdo() < salHebdoMax && employe.getNAS().contains(nas)) {
-                System.out.println(employe.toString());
-                compteur++;
-            }
-        return compteur;
-    }
 }

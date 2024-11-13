@@ -43,11 +43,17 @@ public class Employe {
         System.out.printf("NAS: %s, Salaire Hebdomadaire: %.2f $\n", NAS, salHebdo);
     }
 
+    public static int countBy(Employe[] employes, double salHebdoMax, String nas) {
+        int compteur = 0;
+        for (Employe employe : employes)
+            if (employe.salHebdo < salHebdoMax && employe.NAS.contains(nas)) compteur++;
+        return compteur;
+    }
+
     // Redéfinition de la méthode toString
     @Override
     public String toString() {
         return String.format("NAS: %s, Salaire Hebdomadaire: %.2f $", NAS, salHebdo);
     }
-
 
 } // fin de la classe Employe
