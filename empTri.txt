@@ -1,0 +1,6 @@
+NAS: 123 456 789, Salaire Hebdomadaire: 1250,25 $
+NAS: 231 467 890, Salaire Hebdomadaire: 1671,50 $
+NAS: 250 343 654, Salaire Hebdomadaire: 690,00 $
+NAS: 250 642 753, Salaire Hebdomadaire: 1234,25 $
+NAS: 371 238 432, Salaire Hebdomadaire: 1012,50 $
+NAS: 478 343 689, Salaire Hebdomadaire: 1750,75 $

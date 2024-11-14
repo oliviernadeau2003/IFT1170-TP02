@@ -1,4 +1,5 @@
 import classes.Employe;
+import classes.EmployeUtils;
 
 public class TP02_1170_NumA_A24 {
 
@@ -40,12 +41,20 @@ public class TP02_1170_NumA_A24 {
 
         System.out.println();
 
-        System.out.printf("%d employé(s) gagne(nt) moins de 1300.00$ et dont NAS contient '5'\n", Employe.countBy(employes, 1300.00d, "5"));
+        System.out.printf("%d employé(s) gagne(nt) moins de 1300.00$ et dont NAS contient '5'\n", EmployeUtils.countBy(employes, 1300.00d, "5"));
         System.out.println();
 
-        System.out.printf("%d employé(s) gagne(nt) moins de 750.00$ et dont NAS contient '3'", Employe.countBy(employes, 750.00d, "3"));
+        System.out.printf("%d employé(s) gagne(nt) moins de 750.00$ et dont NAS contient '3'", EmployeUtils.countBy(employes, 750.00d, "3"));
         System.out.println();
 
+        EmployeUtils.triParSelection(employes);
+        System.out.println("Après avoir trié les employés par leur NAS : ");
+        for (int i = 0; i < employes.length; i++)
+            System.out.println("Employe " + i + ": " + employes[i].toString());
+        System.out.println();
+
+        // Créer le fichier texte "empTri.txt"
+        EmployeUtils.creerFichierTexte(employes,"empTri.txt");
     }
 
 }
