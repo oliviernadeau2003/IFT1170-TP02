@@ -8,6 +8,7 @@ import java.util.List;
 
 public class TP02_1170_NumB_A24 {
     public static void AfficherNumB() {
+        System.out.println("\n=== Numéro B ===");
         List<Pays> paysList = new ArrayList<>();
         String currentDirectory = System.getProperty("user.dir");
         int nombrePays = lireFichierPays(currentDirectory + "/src/data/pays_a24.txt", paysList);

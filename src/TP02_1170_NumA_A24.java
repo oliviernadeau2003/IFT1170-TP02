@@ -4,7 +4,7 @@ import classes.EmployeUtils;
 public class TP02_1170_NumA_A24 {
 
     public static void AfficherNumA() {
-
+        System.out.println("\n=== Numéro A ===");
         Employe emp1 = new Employe("250 642 753", 1234.56);
         Employe emp2 = new Employe("123 456 789"); // salaire par défaut 1250.25$
         Employe emp3 = new Employe("250 343 678", 40.00, 25.75); // salHebdo = 40 * 25.75$
