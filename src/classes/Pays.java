@@ -36,4 +36,9 @@ public class Pays {
         return population;
     }
 
+    // Redéfinition de la méthode toString
+    @Override
+    public String toString() {
+        return String.format("Continent #%c, Nom: %s, Capital: %s, Superficie: %skm2, Population: %d habitant(s)", continent, nom, capitale, superficie, population);
+    }
 }

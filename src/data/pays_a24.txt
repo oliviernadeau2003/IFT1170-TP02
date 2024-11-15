@@ -4,7 +4,7 @@
 4AUSTRALIE                          CANBERRA                   7686850       19834248
 3JAPON                              TOKYO                       377835       12761000
 5ALLEMAGNE                          BERLIN                      357027        8253700
-5FRANCE                             VERSAILLES                       543964       61387038
+5FRANCE                             VERSAILLES                  543964       61387038
 5ITALIE                             ROME                        301230       57715620
 3COREE DU SUD                       SEOUL                        99274       48324000
 5ROYAUME-UNI                        LONDRES                     244101       58789194
