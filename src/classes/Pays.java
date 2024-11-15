@@ -36,9 +36,22 @@ public class Pays {
         return population;
     }
 
-    // Redéfinition de la méthode toString
     @Override
     public String toString() {
         return String.format("Continent #%c, Nom: %s, Capital: %s, Superficie: %skm2, Population: %d habitant(s)", continent, nom, capitale, superficie, population);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        // Check if the object references are the same
+        if (this == obj) return true;
+
+        // Check if obj is an instance of Pays
+        if (!(obj instanceof Pays)) return false;
+
+        // Cast the object to Pays and compare based on `nom`
+        Pays other = (Pays) obj;
+        return this.nom != null && this.nom.equalsIgnoreCase(other.nom);
+    }
+
 }

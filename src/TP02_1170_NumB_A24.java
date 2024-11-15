@@ -17,8 +17,10 @@ public class TP02_1170_NumB_A24 {
         System.out.println("Nombre de pays lus : " + nombrePays);
         System.out.println();
 
-        PaysUtils.afficher(paysList,0,12);
+        PaysUtils.afficher(paysList, 0, 12);
         System.out.println();
+
+
     }
 
     public static int lireFichierPays(String fichier, List<Pays> paysList) {
@@ -41,21 +43,20 @@ public class TP02_1170_NumB_A24 {
     }
 
     private static Pays getPays(String ligne) {
-        char continent = ligne.charAt(0); // Premier caractère pour le continent
+        char continent = ligne.charAt(0);
 
-        // Le nom du pays est entre les positions 1 et 34
+        // 1 to 36
         String nom = ligne.substring(1, 36).trim();
 
-        // La capitale est entre les positions 34 et 58
+        // 36 to 62
         String capitale = ligne.substring(36, 62).trim();
 
-        // La superficie est entre les positions 58 et 69
-        double superficie = Double.parseDouble(ligne.substring(63, 71).trim());
+        // 63 to 71
+        double superficie = Double.parseDouble(ligne.substring(63, 72).trim());
 
-        // La population est après la position 69 jusqu'à la fin
-        long population = Long.parseLong(ligne.substring(76).trim());
+        // 71 till the end
+        long population = Long.parseLong(ligne.substring(72).trim());
 
-        // Retourner un objet Pays avec les informations extraites
         return new Pays(continent, nom, capitale, superficie, population);
     }
 
