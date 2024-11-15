@@ -1,6 +1,7 @@
 package classes;
 
 public class Pays {
+
     private char continent;
     private String nom;
     private String capitale;
@@ -15,7 +16,7 @@ public class Pays {
         this.population = population;
     }
 
-    // Getters
+    //* Getters
     public char getContinent() {
         return continent;
     }
@@ -34,6 +35,27 @@ public class Pays {
 
     public long getPopulation() {
         return population;
+    }
+
+    //* Setters
+    public void setContinent(PaysUtils.Continent newContinent) {
+        this.continent = newContinent.number;
+    }
+
+    public void setNom(String newNom) {
+        this.nom = newNom;
+    }
+
+    public void setCapitale(String newCapital) {
+        this.capitale = newCapital;
+    }
+
+    public void setSuperficie(double newSuperficie) {
+        this.superficie = newSuperficie;
+    }
+
+    public void setPopulation(long newPopulation) {
+        this.population = newPopulation;
     }
 
     @Override

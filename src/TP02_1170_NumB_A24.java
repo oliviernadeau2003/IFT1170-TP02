@@ -12,7 +12,7 @@ public class TP02_1170_NumB_A24 {
         System.out.println("\n=== Numéro B ===");
         List<Pays> paysList = new ArrayList<>();
         String currentDirectory = System.getProperty("user.dir");
-        int nombrePays = lireFichierPays(currentDirectory + "/src/data/pays_a24.txt", paysList);
+        int nombrePays = readFilePays(currentDirectory + "/src/data/pays_a24.txt", paysList);
 
         System.out.println("Nombre de pays lus : " + nombrePays);
         System.out.println();
@@ -20,16 +20,37 @@ public class TP02_1170_NumB_A24 {
         PaysUtils.afficher(paysList, 0, 12);
         System.out.println();
 
+        //* Modifier le continent de la Chine, il doit devenir l’Asie
+        Pays paysTempo = PaysUtils.retrievePays(paysList, "Chine");
+        if (paysTempo != null)
+            paysTempo.setContinent(PaysUtils.Continent.ASIE);
 
+        //* Modifier la capitale de la France, elle doit devenir PARIS ;
+        paysTempo = PaysUtils.retrievePays(paysList, "France");
+        if (paysTempo != null)
+            paysTempo.setCapitale("PARIS");
+
+        //* Changer la population de l’Allemagne : elle devient 10 fois la population lue ;
+        paysTempo = PaysUtils.retrievePays(paysList, "Allemagne");
+        if (paysTempo != null)
+            paysTempo.setPopulation(paysTempo.getPopulation() * 10);
+
+        //* Augmenter de 4% la population de tous les pays d’Afrique.
+        PaysUtils.augmenterPopulation(paysList, PaysUtils.Continent.AFRIQUE, 1.04);
+
+        //* Afficher dans la console, les pays dont le nom est identique au nom de la capitale.
+
+        PaysUtils.afficher(paysList, 0, 15);
+        System.out.println();
     }
 
-    public static int lireFichierPays(String fichier, List<Pays> paysList) {
+    public static int readFilePays(String fichier, List<Pays> paysList) {
         int nombrePays = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(fichier))) {
             String ligne;
             while ((ligne = br.readLine()) != null) {
-                Pays pays = getPays(ligne);
+                Pays pays = PaysUtils.createPays(ligne);
                 paysList.add(pays);
                 nombrePays++;
             }
@@ -41,25 +62,6 @@ public class TP02_1170_NumB_A24 {
 
         return nombrePays;
     }
-
-    private static Pays getPays(String ligne) {
-        char continent = ligne.charAt(0);
-
-        // 1 to 36
-        String nom = ligne.substring(1, 36).trim();
-
-        // 36 to 62
-        String capitale = ligne.substring(36, 62).trim();
-
-        // 63 to 71
-        double superficie = Double.parseDouble(ligne.substring(63, 72).trim());
-
-        // 71 till the end
-        long population = Long.parseLong(ligne.substring(72).trim());
-
-        return new Pays(continent, nom, capitale, superficie, population);
-    }
-
 
 }
 
