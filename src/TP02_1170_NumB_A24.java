@@ -1,3 +1,5 @@
+//* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
+
 import classes.Pays;
 import classes.PaysUtils;
 
@@ -8,6 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TP02_1170_NumB_A24 {
+
+    public static void main(String[] args) {
+        AfficherNumB();
+    }
+
     public static void AfficherNumB() {
         System.out.println("\n=== Numéro B ===");
         List<Pays> paysList = new ArrayList<>();

@@ -1,7 +1,13 @@
+//* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
+
 import classes.Employe;
 import classes.EmployeUtils;
 
 public class TP02_1170_NumA_A24 {
+
+    public static void main(String[] args) {
+        AfficherNumA();
+    }
 
     public static void AfficherNumA() {
         System.out.println("\n=== Numéro A ===");
@@ -36,6 +42,7 @@ public class TP02_1170_NumA_A24 {
         employes[5] = new Employe("371 238 432", 50.00, 20.25); // salHebdo = 50 * 20.25$
 
         // Affichage du contenu du tableau en utilisant toString()
+        System.out.println("Contenu du tableau :");
         for (int i = 0; i < employes.length; i++)
             System.out.println("Employe " + i + ": " + employes[i].toString());
 
@@ -44,7 +51,7 @@ public class TP02_1170_NumA_A24 {
         System.out.printf("%d employé(s) gagne(nt) moins de 1300.00$ et dont NAS contient '5'\n", EmployeUtils.countBy(employes, 1300.00d, "5"));
         System.out.println();
 
-        System.out.printf("%d employé(s) gagne(nt) moins de 750.00$ et dont NAS contient '3'", EmployeUtils.countBy(employes, 750.00d, "3"));
+        System.out.printf("%d employé(s) gagne(nt) moins de 750.00$ et dont NAS contient '3'\n", EmployeUtils.countBy(employes, 750.00d, "3"));
         System.out.println();
 
         EmployeUtils.triParSelection(employes);
@@ -54,7 +61,7 @@ public class TP02_1170_NumA_A24 {
         System.out.println();
 
         // Créer le fichier texte "empTri.txt"
-        EmployeUtils.creerFichierTexte(employes,"empTri.txt");
+        EmployeUtils.creerFichierTexte(employes, "empTri.txt");
     }
 
 }

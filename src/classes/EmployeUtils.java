@@ -1,3 +1,5 @@
+//* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
+
 package classes;
 
 import java.io.BufferedWriter;
