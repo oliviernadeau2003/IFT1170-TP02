@@ -65,9 +65,63 @@ public class TP02_1170_NumB_A24 {
         paysTempo = PaysUtils.trouverPaysLePlusPeuple(paysList, PaysUtils.Continent.AFRIQUE);
         if (paysTempo != null)
             System.out.printf("Le pays le plus peuplé d'Afrique est :\n%s\n", paysTempo);
-
-
         System.out.println();
+
+
+        //* Déterminer et afficher les informations dans la console :
+        //* Les pays dont le nom commence par une voyelle ;
+        System.out.println("Les pays qui commence par une voyelle :");
+        PaysUtils.afficherPaysCommencentParVoyelle(paysList);
+        System.out.println();
+
+        //* Le pays d’Océanie dont la capitale contient le plus de lettres / caractères alphabétiques.
+        paysTempo = PaysUtils.trouverPaysCapitalePlusLongue(paysList, PaysUtils.Continent.OCEANIE);
+        if (paysTempo != null)
+            System.out.printf("Le pays d’Océanie dont la capitale contient le plus de lettres / caractères alphabétiques : \n%s", paysTempo);
+        System.out.println();
+
+
+        //* Quick Sort
+        System.out.println();
+        PaysUtils.quickSort(paysList, 0, paysList.size() - 1);
+        System.out.println("Tableau après le tri rapide :");
+        PaysUtils.afficher(paysList, 0, 10);
+
+
+        //* Binary Search
+        System.out.println();
+        System.out.println("Résultat des recherches dichotomiques :");
+
+        //*     Canada
+        paysTempo = PaysUtils.rechercheDichotomique(paysList, "Canada");
+        if (paysTempo != null)
+            System.out.println(paysTempo);
+
+        //*     France
+        paysTempo = PaysUtils.rechercheDichotomique(paysList, "France");
+        if (paysTempo != null)
+            System.out.println(paysTempo);
+
+        //*     Japon
+        paysTempo = PaysUtils.rechercheDichotomique(paysList, "Japon");
+        if (paysTempo != null)
+            System.out.println(paysTempo);
+
+        //*     Mexique
+        paysTempo = PaysUtils.rechercheDichotomique(paysList, "Mexique");
+        if (paysTempo != null)
+            System.out.println(paysTempo);
+        System.out.println();
+
+
+        //* Créer le fichier "Asie.txt" qui contient seulement les pays d'Asie
+        PaysUtils.creerFichierParContinent(paysList, PaysUtils.Continent.ASIE, "Asie.txt");
+        System.out.println();
+
+        //* Créer le fichier "Europe.txt" qui contient seulement les pays d'Europe
+        PaysUtils.creerFichierParContinent(paysList, PaysUtils.Continent.EUROPE, "Europe.txt");
+        System.out.println();
+
     }
 
     public static int readFilePays(String fichier, List<Pays> paysList) {
