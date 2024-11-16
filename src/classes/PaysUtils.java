@@ -46,6 +46,40 @@ public class PaysUtils {
         return null;
     }
 
+    public static Pays trouverPaysDensiteMax(List<Pays> paysList, PaysUtils.Continent continent) {
+        Pays paysMaxDensite = null;
+        double maxDensite = 0;
+
+        for (Pays pays : paysList) {
+            if (pays.getContinent() == continent.number) {
+                double densite = pays.calculerDensite();
+                if (densite > maxDensite) {
+                    maxDensite = densite;
+                    paysMaxDensite = pays;
+                }
+            }
+        }
+
+        return paysMaxDensite;
+    }
+
+    public static Pays trouverPaysLePlusPeuple(List<Pays> paysList, PaysUtils.Continent continent) {
+        Pays paysMaxPopulation = null;
+        long maxPopulation = 0;
+
+        for (Pays pays : paysList) {
+            if (pays.getContinent() == continent.number) {
+                if (pays.getPopulation() > maxPopulation) {
+                    maxPopulation = pays.getPopulation();
+                    paysMaxPopulation = pays;
+                }
+            }
+        }
+
+        return paysMaxPopulation;
+    }
+
+
     static public Pays createPays(String ligne) {
         char continent = ligne.charAt(0);
 

@@ -22,25 +22,51 @@ public class TP02_1170_NumB_A24 {
 
         //* Modifier le continent de la Chine, il doit devenir l’Asie
         Pays paysTempo = PaysUtils.retrievePays(paysList, "Chine");
-        if (paysTempo != null)
-            paysTempo.setContinent(PaysUtils.Continent.ASIE);
+        if (paysTempo != null) paysTempo.setContinent(PaysUtils.Continent.ASIE);
 
         //* Modifier la capitale de la France, elle doit devenir PARIS ;
         paysTempo = PaysUtils.retrievePays(paysList, "France");
-        if (paysTempo != null)
-            paysTempo.setCapitale("PARIS");
+        if (paysTempo != null) paysTempo.setCapitale("PARIS");
 
         //* Changer la population de l’Allemagne : elle devient 10 fois la population lue ;
         paysTempo = PaysUtils.retrievePays(paysList, "Allemagne");
-        if (paysTempo != null)
-            paysTempo.setPopulation(paysTempo.getPopulation() * 10);
+        if (paysTempo != null) paysTempo.setPopulation(paysTempo.getPopulation() * 10);
 
         //* Augmenter de 4% la population de tous les pays d’Afrique.
         PaysUtils.augmenterPopulation(paysList, PaysUtils.Continent.AFRIQUE, 1.04);
 
-        //* Afficher dans la console, les pays dont le nom est identique au nom de la capitale.
-
+        //* Afficher les 15 premier pays
         PaysUtils.afficher(paysList, 0, 15);
+
+        //* Afficher dans la console, les pays dont le nom est identique au nom de la capitale.
+        System.out.println("Pays dont la capitale porte le même nom que le pays :");
+        for (Pays pays : paysList)
+            if (pays.getNom().equals(pays.getCapitale())) System.out.println(pays);
+        System.out.println();
+
+        //* Déterminer puis afficher dans la console les pays suivant avec la plus grande densité.
+        paysTempo = PaysUtils.trouverPaysDensiteMax(paysList, PaysUtils.Continent.ASIE);
+        if (paysTempo != null)
+            System.out.printf("Le pays avec la plus grande densité d'Asie est :\n%s\n", paysTempo);
+
+        System.out.println();
+        paysTempo = PaysUtils.trouverPaysDensiteMax(paysList, PaysUtils.Continent.AMERIQUE);
+        if (paysTempo != null)
+            System.out.printf("Le pays avec la plus grande densité d'Amérique est :\n%s\n", paysTempo);
+
+        System.out.println();
+
+        //* Déterminer puis afficher le pays le plus peuplé.
+        paysTempo = PaysUtils.trouverPaysLePlusPeuple(paysList, PaysUtils.Continent.EUROPE);
+        if (paysTempo != null)
+            System.out.printf("Le pays le plus peuplé d'Amérique est :\n%s\n", paysTempo);
+        System.out.println();
+
+        paysTempo = PaysUtils.trouverPaysLePlusPeuple(paysList, PaysUtils.Continent.AFRIQUE);
+        if (paysTempo != null)
+            System.out.printf("Le pays le plus peuplé d'Afrique est :\n%s\n", paysTempo);
+
+
         System.out.println();
     }
 

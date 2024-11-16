@@ -58,6 +58,10 @@ public class Pays {
         this.population = newPopulation;
     }
 
+    public double calculerDensite() {
+        return population / superficie;
+    }
+
     @Override
     public String toString() {
         return String.format("Continent #%c, Nom: %s, Capital: %s, Superficie: %skm2, Population: %d habitant(s)", continent, nom, capitale, superficie, population);
