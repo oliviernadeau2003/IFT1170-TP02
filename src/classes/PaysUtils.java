@@ -1,3 +1,5 @@
+//* Auteur : Olivier Nadeau [IFT1170 Automne 2024]
+
 package classes;
 
 import java.io.BufferedWriter;
@@ -166,7 +168,7 @@ public class PaysUtils {
             int comparaison = pays.getNom().compareToIgnoreCase(nom);
 
             if (comparaison == 0) {
-                return pays; // Trouvé
+                return pays;
             } else if (comparaison < 0) {
                 low = mid + 1; // Recherche dans la moitié supérieure
             } else {
